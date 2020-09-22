@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div style="margin-top: 3rem;"class="center container">
+        <h3 style ="display: inline-block;" class="center judul-tabel"><a href="{% url 'index' %}">Home</a></h3>
+        <h3 style ="margin-left:1 rem; display: inline-block;" class="center judul-tabel"><a href="{% url 'create' %}">Create</a></h3>
+
+        
+    </div>
+    <div class="container">
+        
+        <h4 class="center judul-tabel">Detail Item </h4>
+
+    </div>
+    
+ 
+
+    <div class="content-wrapper">     
+        <div class="detail-page">
+            <div class="container">   
+
+                <table>
+                    <tr>
+                    <th>ID</th>
+                    <th>Nama Item</th>
+                    <th>Description</th>
+                    <th>Unique Code</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                    </tr>
+
+                        <tr>
+                            
+                            <td>{{detail_product.id}}</td>
+                            <td>{{detail_product.name}}</td>
+                            <td>{{detail_product.description}}</td>
+                            <td>{{detail_product.code}}</td>
+                            <td><a href="{% url 'update' pk=detail_product.pk %} ">Update</a></td>
+                            <td><a href="{% url 'delete' pk=detail_product.pk %} ">X</a></td>
+
+                        </tr>
+
+                </table>  
+            </div>    
+        </div>
+    </div>
+  
+    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+    <script type="text/javascript" src="{% static 'js/ajax.js'%}"></script>
+</body>
+
+</html>

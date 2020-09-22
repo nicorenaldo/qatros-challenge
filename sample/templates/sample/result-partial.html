@@ -1,0 +1,37 @@
+
+ 
+<div id="replaceable-content">
+    <div class="content-wrapper">     
+        <div class="detail-page">
+            <div class="container">   
+                {% if items %} 
+                <table>
+                    <tr>
+                    <th>ID</th>
+                    <th>Nama Item</th>
+                    <th>Description</th>
+                    <th>Unique Code</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                    </tr>
+                    {%for s in items %}
+                        <tr>
+                            
+                            <td>{{s.id}}</td>
+                            <td><a href="{% url 'detail' pk=s.pk %} ">{{s.name}}</a></td>
+                            <td>{{s.description}}</td>
+                            <td>{{s.code}}</td>
+                            <td><a href="{% url 'update' pk=s.pk %} ">Update</a></td>
+                            <td><a href="{% url 'delete' pk=s.pk %} ">X</a></td>
+
+                        </tr>
+                    {% endfor %}
+                </table>  
+                {% else %}
+                <h3>Items does not exist</h3>
+                {%endif%}
+            </div>    
+        </div>
+    </div>
+  
+  </div>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div style="margin-top: 3rem;"class="center container">
+        <h3 class="center judul-tabel"><a href="{% url 'index' %}">Home</a><a href="{% url 'create' %}">Create</a><a href="{% url 'documentation' %}">Documentation</a></h3>        
+    </div>
+    <div class="content-wrapper">     
+        <div class="detail-page">
+            <div class="container">
+                
+                <h4 class="center judul-tabel">Documentation</h4>
+                
+                <h4 style="margin-top: 100px;">You can search a query from the search bar below, you don't have to press enter tho...</h4>
+                <form method="GET"  action="{% url 'index' %}">
+                    <input type="text" class="form-control" id="user-input" placeholder="Product Name..." name="q" required="">
+                    <input type="hidden" >
+                </form>
+
+                <h4 style="margin-top: 100px;">Search Result Example</h4>
+                
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama Item</th>
+                        <th>Description</th>
+                        <th>Unique Code</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                    <td>{{items.id}}</td>
+                    <td><a href="{% url 'detail' pk=items.pk %} ">{{items.name}}</a></td>
+                    <td>{{items.description}}</td>
+                    <td>{{items.code}}</td>
+                    <td><a href="{% url 'update' pk=items.pk %} ">Update</a></td>
+                    <td><a href="{% url 'delete' pk=items.pk %} ">X</a></td>
+                    </tr>
+                </table>
+                <h4 style="margin-top: 15px;">Click items name to see the detail, or you can click the update or delete button on the right side</h4>
+            </div>    
+    
+    <div style="height:200px;"></div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+    <script type="text/javascript" src="{% static 'js/ajax.js'%}"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,48 @@
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div style="margin-top: 3rem;"class="container">
+        <a href="{% url 'index' %}"><h1 class="center judul-tabel">Home</h1></a>
+    </div>
+    <div class="container">
+        
+        <h4 class="center judul-tabel">Add Item </h4>
+        
+        <form style="margin-left: auto; margin-right: auto;" method="POST" enctype="multipart/form-data" class="luar submitform">
+            {% csrf_token %}
+            <fieldset class= "form-group">
+                {% for field in form %}
+                    {{ field.label_tag }}
+                    {% render_field field class="form-border form-control form-group" placeholder=field.label %}
+                {% endfor %} 
+            </fieldset>
+            <div style='text-align: center;'>
+                <button class="btn btn-primary" type="submit">Update Items</button>
+                <a class="btn btn-outline-secondary" href="{% url 'index' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+    
+    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+    <script type="text/javascript" src="{% static 'js/ajax.js'%}"></script>
+</body>
+
+</html>
