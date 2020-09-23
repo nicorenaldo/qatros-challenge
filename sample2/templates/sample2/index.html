@@ -18,22 +18,26 @@
     <div style="margin-top: 3rem;"class="center container">
         <h3 class="center judul-tabel">
             <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'index' %}">Tugas1</a>
-            <a href="{% url 'create_item' %}">Create</a>
-            <a href="{% url 'documentation' %}">Documentation</a>
+            <a href="{% url 'index2' %}">Tugas2</a>
+            <a href="{% url 'documentation2' %}">Documentation</a>
         </h3>
+        <h5 class="center judul-tabel">
+            <a href="{% url 'create_bus' %}">Create Bus</a>
+            <a href="{% url 'create_schedule' %}">Create Schedule</a>
+            <a href="{% url 'create_station' %}">Create Station</a>
+        </h5>
     </div>
     <div class="container">
         
         <h4 class="center judul-tabel">List Item :</h4>
         
-        <form method="GET"  action="{% url 'index' %}">
-            <input type="text" class="form-control" id="user-input" placeholder="Product Name..." name="q" required="">
+        <form method="GET"  action="{% url 'index2' %}">
+            <input type="text" class="form-control" id="user-input2" placeholder="Product Name..." name="qq" required="">
             <input type="hidden" >
         </form>
     </div>
-    
-    {% include 'sample/result-partial.html' %}
+
+    {% include 'sample2/result-partial.html' %}
     
     <div style="height:200px;"></div>
     <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->

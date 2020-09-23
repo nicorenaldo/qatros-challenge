@@ -14,7 +14,7 @@
     <div style="margin-top: 3rem;"class="center container">
         <h3 class="center judul-tabel">
             <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'index' %}">Tugas1</a>
+            <a href="{% url 'index2' %}">Tugas2</a>
             <a href="{% url 'create_item' %}">Create</a>
             <a href="{% url 'documentation' %}">Documentation</a>
         </h3>
@@ -42,14 +42,7 @@
                         <th>Update</th>
                         <th>Delete</th>
                     </tr>
-                    <tr>
-                    <td>{{items.id}}</td>
-                    <td><a href="{% url 'detail_item' pk=items.pk %} ">{{items.name}}</a></td>
-                    <td>{{items.description}}</td>
-                    <td>{{items.code}}</td>
-                    <td><a href="{% url 'update_item' pk=items.pk %} ">Update</a></td>
-                    <td><a href="{% url 'delete_item' pk=items.pk %} ">X</a></td>
-                    </tr>
+
                 </table>
                 <h4 style="margin-top: 15px;">Click items name to see the detail, or you can click the update or delete button on the right side</h4>
             </div>    

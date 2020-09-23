@@ -1,0 +1,45 @@
+
+ 
+<div id="replaceable-content2">
+    
+    <div class="content-wrapper">     
+        <div class="detail-page">
+            <div class="container">   
+                {% if schedule %} 
+                <table>
+                    <tr>
+                    <th>ID</th>
+                    <th>Nama Bus</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Day</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>Time on road</th>
+                    <th>Unique Code</th>
+                    
+                    </tr>
+                    {%for s in schedule %}
+                        <tr>
+                            
+                            <td>{{s.id}}</td>
+                            <td><a href="{% url 'detail_bus' pk=s.bus.pk %} ">{{s.bus.name}}</a></td>
+                            <td><a href="{% url 'detail_station' pk=s.origin.pk %} ">{{s.origin}}</a></td>
+                            <td><a href="{% url 'detail_station' pk=s.destination.pk %} ">{{s.destination}}</a></td>
+                            <td>{{s.get_day_display}}</td>
+                            <td>{{s.time_depart|time:"H:i"}}</td>
+                            <td>{{s.time_arrival|time:"H:i"}}</td>
+                            <td>{{ s.travel_time }} Hours</td>
+                            <td><a href="{% url 'detail_schedule' pk=s.pk %} ">{{s.code}}</a></td>
+
+                        </tr>
+                    {% endfor %}
+                </table>  
+                {% else %}
+                <h3>Items does not exist</h3>
+                {%endif%}
+            </div>    
+        </div>
+    </div>
+    
+</div>

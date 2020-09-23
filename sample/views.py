@@ -15,6 +15,7 @@ from django.http import Http404
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormMixin
 from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 # Create your views here.
 
 def documentation(request):
@@ -24,10 +25,12 @@ def documentation(request):
     
     return render(request, template, context)
 
-def home (request):
-    
-    items = Items.objects.all()
+def home(request):
+    template = 'sample/home.html'
+    return render(request, template)
 
+def index (request):
+    items = Items.objects.all()
     search_query= request.GET.get('q')
     if search_query :
         items = items.filter(
@@ -35,13 +38,14 @@ def home (request):
             Q(description__icontains = search_query)|
             Q(code__icontains = search_query)
         )
-        print(items)
+        print("cari")
 
     if request.is_ajax():
         html = render_to_string(
             template_name="sample/result-partial.html", 
             context={"items": items}
         )
+        print(html)
         data_dict = {"html_from_view": html}
         return JsonResponse(data=data_dict, safe=False)
         
@@ -64,20 +68,6 @@ class APIItems(APIView):
 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class ItemCreate(CreateView):
-    model = Items
-    # fields = ['name','description']
-    success_url = '/'
-    template_name = 'sample/submit.html'
-    form_class = SubmitForm
-
-    def form_valid(self, form):
-        form.save(commit=False)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/')
-        return super().form_valid(form)
-
 def ItemCreate(request):
     form = SubmitForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
@@ -87,7 +77,7 @@ def ItemCreate(request):
     context = {'form': form}
     return render(request, 'sample/submit.html', context)
 
-class DetailViews(DetailView):
+class ItemDetailViews(DetailView):
     model = Items
     template_name = 'sample/detail.html'  
     
@@ -95,7 +85,7 @@ class DetailViews(DetailView):
         return reverse('detail', kwargs={'pk':self.object.pk})
 
     def get_context_data(self, **kwargs):
-        context = super(DetailViews, self).get_context_data(**kwargs)
+        context = super(ItemDetailViews, self).get_context_data(**kwargs)
         context["detail_product"] = self.object
         return context
 

@@ -18,11 +18,11 @@
                         <tr>
                             
                             <td>{{s.id}}</td>
-                            <td><a href="{% url 'detail' pk=s.pk %} ">{{s.name}}</a></td>
+                            <td><a href="{% url 'detail_item' pk=s.pk %} ">{{s.name}}</a></td>
                             <td>{{s.description}}</td>
                             <td>{{s.code}}</td>
-                            <td><a href="{% url 'update' pk=s.pk %} ">Update</a></td>
-                            <td><a href="{% url 'delete' pk=s.pk %} ">X</a></td>
+                            <td><a href="{% url 'update_item' pk=s.pk %} ">Update</a></td>
+                            <td><a href="{% url 'delete_item' pk=s.pk %} ">X</a></td>
 
                         </tr>
                     {% endfor %}
@@ -34,4 +34,4 @@
         </div>
     </div>
   
-  </div>
+</div>

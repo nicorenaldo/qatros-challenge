@@ -18,7 +18,7 @@
     <div style="margin-top: 3rem;"class="center container">
         <h3 class="center judul-tabel">
             <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'index' %}">Tugas1</a>
+            <a href="{% url 'index2' %}">Tugas2</a>
             <a href="{% url 'documentation2' %}">Documentation</a>
         </h3>
     </div>
@@ -37,21 +37,17 @@
                 <table>
                     <tr>
                     <th>ID</th>
-                    <th>Nama Item</th>
-                    <th>Description</th>
-                    <th>Unique Code</th>
+                    <th>Station Name</th>
                     <th>Update</th>
                     <th>Delete</th>
                     </tr>
 
                         <tr>
                             
-                            <td>{{detail_product.id}}</td>
-                            <td>{{detail_product.name}}</td>
-                            <td>{{detail_product.description}}</td>
-                            <td>{{detail_product.code}}</td>
-                            <td><a href="{% url 'update_item' pk=detail_product.pk %} ">Update</a></td>
-                            <td><a href="{% url 'delete_item' pk=detail_product.pk %} ">X</a></td>
+                            <td>{{detail.id}}</td>
+                            <td>{{detail.name}}</td>
+                            <td><a href="{% url 'update_station' pk=detail.pk %} ">Update</a></td>
+                            <td><a href="{% url 'delete_station' pk=detail.pk %} ">X</a></td>
 
                         </tr>
 
