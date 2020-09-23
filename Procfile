@@ -1,0 +1,1 @@
+web: gunicorn qatrosnico.wsgi --log-file -

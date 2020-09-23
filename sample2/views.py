@@ -19,14 +19,16 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 # Create your views here.
 def documentation(request):
+    items = Schedule.objects.get(pk=1)
     template = 'sample2/documentation.html'
-    return render(request, template)
+    context={'items':items}
+    return render(request, template,context)
 
 def index (request):
     bus = Bus.objects.all()
     schedule = Schedule.objects.all()
 
-    search_query= request.GET.get('qq')
+    search_query= request.GET.get('q')
     if search_query :
         schedule = schedule.filter(
             Q(day__icontains = search_query)|

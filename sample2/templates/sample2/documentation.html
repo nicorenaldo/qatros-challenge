@@ -15,7 +15,6 @@
         <h3 class="center judul-tabel">
             <a href="{% url 'home' %}">Home</a>
             <a href="{% url 'index2' %}">Tugas2</a>
-            <a href="{% url 'create_item' %}">Create</a>
             <a href="{% url 'documentation' %}">Documentation</a>
         </h3>
     </div>
@@ -26,6 +25,7 @@
                 <h4 class="center judul-tabel">Documentation</h4>
                 
                 <h4 style="margin-top: 100px;">You can search a query from the search bar below, you don't have to press enter tho...</h4>
+                <h6 class="center judul-tabel">You can search by name, destination, day, and the unique code</h6>
                 <form method="GET"  action="{% url 'index' %}">
                     <input type="text" class="form-control" id="user-input" placeholder="Product Name..." name="q" required="">
                     <input type="hidden" >
@@ -36,16 +36,47 @@
                 <table>
                     <tr>
                         <th>ID</th>
-                        <th>Nama Item</th>
-                        <th>Description</th>
+                        <th>Bus Name</th>
+                        <th>Origin</th>
+                        <th>Destination</th>
+                        <th>Day</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Time on road</th>
                         <th>Unique Code</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>{{items.id}}</td>
+                        <td><a href="{% url 'detail_bus' pk=items.bus.pk %} ">{{items.bus.name}}</a></td>
+                        <td><a href="{% url 'detail_station' pk=items.origin.pk %} ">{{items.origin}}</a></td>
+                        <td><a href="{% url 'detail_station' pk=items.destination.pk %} ">{{items.destination}}</a></td>
+                        <td>{{items.day}}</td>
+                        <td>{{items.time_depart|time:"H:i"}}</td>
+                        <td>{{items.time_arrival|time:"H:i"}}</td>
+                        <td>{{ items.travel_time }} Hours</td>
+                        <td><a href="{% url 'detail_schedule' pk=items.pk %} ">{{items.code}}</a></td>
                     </tr>
 
                 </table>
-                <h4 style="margin-top: 15px;">Click items name to see the detail, or you can click the update or delete button on the right side</h4>
+                <h6 class="center judul-tabel">You can click bus name to see the detail, you can also see the details of the station by clicking the origin/destination link, and the schedule detail on the code link</h6>
+                <div style="height:50px;"></div>
+                <h5 class="center judul-tabel">
+                    <a href="{% url 'create_bus' %}">Create Bus</a>
+                    <a href="{% url 'create_schedule' %}">Create Schedule</a>
+                    <a href="{% url 'create_station' %}">Create Station</a>
+                </h5>
+                <h6 class="center judul-tabel">You can add a new data to the database by clicking the form link above</h6>
+                <div style="height:50px;"></div>
+                <h5 class="center judul-tabel">Desain Spesification of These Project :</h5>
+                <h6 class="center judul-tabel">- The model database consisted of 3 models, which is the Bus, Schedule, and Station Model -</h6>
+                <h6 class="center judul-tabel">- Server will prevent you to make a bus schedule if the bus related to has overlap schedule -</h6>
+                <h6 class="center judul-tabel">- You can modify, create, and delete all the model by using the form link in the home page -</h6>
+                <h6 class="center judul-tabel">- You can set the view to see particular day, bus, destination, and even the unique code -</h6>
+                <h6 class="center judul-tabel">- I tried to make it simple so you can see your particular view by using the search bar -</h6>
+                <div style="height:50px;"></div>
+                <h2 class="center judul-tabel">Thanks</h2>
             </div>    
+            
     
     <div style="height:200px;"></div>
     <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->

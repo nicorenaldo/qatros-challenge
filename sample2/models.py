@@ -1,16 +1,16 @@
 from django.db import models
 from django.utils.crypto import get_random_string
 import string
-
+from django.urls import reverse
 import datetime
 DAY_CHOICES = [
-    ('SU', 'Sunday'),
-    ('MO', 'Monday'),
-    ('TH', 'Thursday'),
-    ('WE', 'Wednesday'),
-    ('TU', 'Tuesday'),
-    ('FR', 'Friday'),
-    ('SA', 'Saturday'),
+    ('Sunday', 'Sunday'),
+    ('Monday', 'Monday'),
+    ('Thursday', 'Thursday'),
+    ('Wednesday', 'Wednesday'),
+    ('Tuesday', 'Tuesday'),
+    ('Friday', 'Friday'),
+    ('Saturday', 'Saturday'),
 ]
 # Create your models here.
 class Bus(models.Model):
@@ -26,6 +26,9 @@ class Bus(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse('detail_bus', kwargs={'pk': self.pk})
 
 class Schedule(models.Model):
     bus = models.ForeignKey('Bus', on_delete=models.CASCADE, null=True)
@@ -34,7 +37,7 @@ class Schedule(models.Model):
     destination = models.ForeignKey('Station', on_delete=models.CASCADE, null=True, related_name='destination')
     time_depart = models.TimeField(auto_now=False, auto_now_add=False)
     time_arrival = models.TimeField(auto_now=False, auto_now_add=False,)
-    day = models.CharField(max_length=2,choices=DAY_CHOICES,default='SU')
+    day = models.CharField(max_length=15,choices=DAY_CHOICES,default='Sunday')
     code = models.SlugField(unique=True, blank=True , null=True)
     
     def save(self, *args , **kwargs):
@@ -43,7 +46,10 @@ class Schedule(models.Model):
         super(Schedule , self).save(*args , **kwargs)
 
     def __str__(self):
-        return self.bus.name
+        return self.code
+
+    def get_absolute_url(self):
+        return reverse('detail_schedule', kwargs={'pk': self.pk})
     
     @property
     def travel_time(self):
@@ -53,10 +59,13 @@ class Schedule(models.Model):
         result = datetime1 - datetime2
         # result = time2-time1
         # result = datetime.timedelta(self.time_arrival , self.time_depart)
-        return result
+        return result.seconds/3600
 
 class Station(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('detail_station', kwargs={'pk': self.pk})

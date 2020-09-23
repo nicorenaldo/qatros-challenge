@@ -9,7 +9,7 @@
                 <table>
                     <tr>
                     <th>ID</th>
-                    <th>Nama Bus</th>
+                    <th>Bus Name</th>
                     <th>Origin</th>
                     <th>Destination</th>
                     <th>Day</th>
@@ -17,7 +17,6 @@
                     <th>Arrival</th>
                     <th>Time on road</th>
                     <th>Unique Code</th>
-                    
                     </tr>
                     {%for s in schedule %}
                         <tr>
@@ -26,7 +25,7 @@
                             <td><a href="{% url 'detail_bus' pk=s.bus.pk %} ">{{s.bus.name}}</a></td>
                             <td><a href="{% url 'detail_station' pk=s.origin.pk %} ">{{s.origin}}</a></td>
                             <td><a href="{% url 'detail_station' pk=s.destination.pk %} ">{{s.destination}}</a></td>
-                            <td>{{s.get_day_display}}</td>
+                            <td>{{s.day}}</td>
                             <td>{{s.time_depart|time:"H:i"}}</td>
                             <td>{{s.time_arrival|time:"H:i"}}</td>
                             <td>{{ s.travel_time }} Hours</td>

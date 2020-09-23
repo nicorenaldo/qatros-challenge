@@ -29,12 +29,14 @@
     </div>
     <div class="container">
         
-        <h4 class="center judul-tabel">List Item :</h4>
+        <h4 class="center judul-tabel">Bus Schedule List:</h4>
         
+        <h6 class="center judul-tabel">You can search by name, destination, day, and the unique code</h6>
         <form method="GET"  action="{% url 'index2' %}">
-            <input type="text" class="form-control" id="user-input2" placeholder="Product Name..." name="qq" required="">
+            <input type="text" class="form-control" id="user-input2" placeholder="Product Name..." name="q" required="">
             <input type="hidden" >
         </form>
+
     </div>
 
     {% include 'sample2/result-partial.html' %}

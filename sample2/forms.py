@@ -27,10 +27,11 @@ class ScheduleForm(forms.ModelForm):
         super(ScheduleForm, self).clean() 
         time_depart2 = self.cleaned_data.get('time_depart')
         time_arrival2 = self.cleaned_data.get('time_arrival')
+        busz = self.cleaned_data.get('bus')
         dayz = self.cleaned_data.get('day')
 
-        overlapping_start = Schedule.objects.filter(time_depart__gte=time_depart2, time_depart__lte=time_arrival2,day=dayz).count()
-        overlapping_end = Schedule.objects.filter(time_arrival__gte=time_depart2, time_arrival__lte=time_arrival2,day=dayz).count()
+        overlapping_start = Schedule.objects.filter(time_depart__gte=time_depart2, time_depart__lte=time_arrival2,day=dayz,bus=busz).count()
+        overlapping_end = Schedule.objects.filter(time_arrival__gte=time_depart2, time_arrival__lte=time_arrival2,day=dayz,bus=busz).count()
 
         overlapping = overlapping_start > 0 or overlapping_end > 0
         if overlapping:

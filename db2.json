@@ -91,6 +91,175 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2020-09-23T03:16:38.170Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Station object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2020-09-23T03:16:50.073Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Station object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2020-09-23T03:16:58.637Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Station object (3)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2020-09-23T03:17:10.129Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Station object (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2020-09-23T03:22:31.758Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Sinar Pagi",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2020-09-23T03:23:34.412Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Sinar Malam",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2020-09-23T03:28:42.473Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Sinar Pagi",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2020-09-23T06:44:48.414Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Gundala",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2020-09-23T06:45:01.523Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Thomas the Train",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2020-09-23T06:45:15.519Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "Boromir",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2020-09-23T06:45:33.120Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Sydney",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2020-09-23T08:00:45.257Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Sinar Pagi",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Day\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2020-09-23T08:00:51.663Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Sinar Pagi",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Day\"]}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -343,6 +512,114 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add station",
+    "content_type": 8,
+    "codename": "add_station"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change station",
+    "content_type": 8,
+    "codename": "change_station"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete station",
+    "content_type": 8,
+    "codename": "delete_station"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view station",
+    "content_type": 8,
+    "codename": "view_station"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add bus",
+    "content_type": 9,
+    "codename": "add_bus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change bus",
+    "content_type": 9,
+    "codename": "change_bus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete bus",
+    "content_type": 9,
+    "codename": "delete_bus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view bus",
+    "content_type": 9,
+    "codename": "view_bus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add schedule",
+    "content_type": 10,
+    "codename": "add_schedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change schedule",
+    "content_type": 10,
+    "codename": "change_schedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete schedule",
+    "content_type": 10,
+    "codename": "delete_schedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view schedule",
+    "content_type": 10,
+    "codename": "view_schedule"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -417,6 +694,30 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "sample2",
+    "model": "station"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "sample2",
+    "model": "bus"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "sample2",
+    "model": "schedule"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "eoyfrm35e02n8ddf6xyrczityatz9rdw",
   "fields": {
@@ -485,6 +786,227 @@
     "name": "Air Mata",
     "description": "Princess Mermaid lupa bagaimana cara berenang di laut",
     "code": "pukcaydnatxy"
+  }
+},
+{
+  "model": "sample.items",
+  "pk": 21,
+  "fields": {
+    "name": "Kisspray",
+    "description": "Pewangi pakaian biar ga bau bawang",
+    "code": "oervtzokrccg"
+  }
+},
+{
+  "model": "sample2.bus",
+  "pk": 1,
+  "fields": {
+    "name": "Sinar Pagi",
+    "description": "Jalannya cepat",
+    "image": "bus/bus1.jpg",
+    "code": "xzemawfjuwtf"
+  }
+},
+{
+  "model": "sample2.bus",
+  "pk": 2,
+  "fields": {
+    "name": "Gundala",
+    "description": "Gundala manusia petir",
+    "image": "bus/bus2.jpg",
+    "code": "nbuycnqdxxdl"
+  }
+},
+{
+  "model": "sample2.bus",
+  "pk": 3,
+  "fields": {
+    "name": "Thomas the Train",
+    "description": "Cartoon Network here",
+    "image": "bus/bus3.png",
+    "code": "eaiicrdjzlab"
+  }
+},
+{
+  "model": "sample2.bus",
+  "pk": 4,
+  "fields": {
+    "name": "Boromir",
+    "description": "Give me the ring",
+    "image": "bus/bus4.jpg",
+    "code": "srqljzgpljay"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 1,
+  "fields": {
+    "bus": 1,
+    "origin": 1,
+    "destination": 2,
+    "time_depart": "06:00:00",
+    "time_arrival": "08:00:00",
+    "day": "Monday",
+    "code": "uouzkdhvtvxi"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 2,
+  "fields": {
+    "bus": 1,
+    "origin": 5,
+    "destination": 2,
+    "time_depart": "09:00:00",
+    "time_arrival": "10:00:00",
+    "day": "Friday",
+    "code": "hhhpbrolkwvk"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 3,
+  "fields": {
+    "bus": 2,
+    "origin": 2,
+    "destination": 3,
+    "time_depart": "12:00:00",
+    "time_arrival": "14:00:00",
+    "day": "Thursday",
+    "code": "ztzzmpldxtae"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 4,
+  "fields": {
+    "bus": 3,
+    "origin": 2,
+    "destination": 5,
+    "time_depart": "13:00:00",
+    "time_arrival": "15:00:00",
+    "day": "Tuesday",
+    "code": "opvcjxlkrchk"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 5,
+  "fields": {
+    "bus": 1,
+    "origin": 3,
+    "destination": 4,
+    "time_depart": "14:00:00",
+    "time_arrival": "20:00:00",
+    "day": "Sunday",
+    "code": "apyjcfbnxjua"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 6,
+  "fields": {
+    "bus": 2,
+    "origin": 5,
+    "destination": 3,
+    "time_depart": "14:00:00",
+    "time_arrival": "12:00:00",
+    "day": "Saturday",
+    "code": "rlchyvgdchxk"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 7,
+  "fields": {
+    "bus": 4,
+    "origin": 5,
+    "destination": 6,
+    "time_depart": "06:00:00",
+    "time_arrival": "14:00:00",
+    "day": "Tuesday",
+    "code": "gphrnhsaqqli"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 8,
+  "fields": {
+    "bus": 2,
+    "origin": 2,
+    "destination": 4,
+    "time_depart": "15:00:00",
+    "time_arrival": "21:00:00",
+    "day": "Thursday",
+    "code": "mhkdrjpirwut"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 9,
+  "fields": {
+    "bus": 2,
+    "origin": 1,
+    "destination": 3,
+    "time_depart": "13:00:00",
+    "time_arrival": "15:00:00",
+    "day": "Monday",
+    "code": "vdpvsjrkjbxp"
+  }
+},
+{
+  "model": "sample2.schedule",
+  "pk": 10,
+  "fields": {
+    "bus": 3,
+    "origin": 3,
+    "destination": 1,
+    "time_depart": "14:00:00",
+    "time_arrival": "16:00:00",
+    "day": "Wednesday",
+    "code": "ferfhopdrzce"
+  }
+},
+{
+  "model": "sample2.station",
+  "pk": 1,
+  "fields": {
+    "name": "Tokyo"
+  }
+},
+{
+  "model": "sample2.station",
+  "pk": 2,
+  "fields": {
+    "name": "China"
+  }
+},
+{
+  "model": "sample2.station",
+  "pk": 3,
+  "fields": {
+    "name": "Korea"
+  }
+},
+{
+  "model": "sample2.station",
+  "pk": 4,
+  "fields": {
+    "name": "Pontianak"
+  }
+},
+{
+  "model": "sample2.station",
+  "pk": 5,
+  "fields": {
+    "name": "Jakarta"
+  }
+},
+{
+  "model": "sample2.station",
+  "pk": 6,
+  "fields": {
+    "name": "Sydney"
   }
 }
 ]
